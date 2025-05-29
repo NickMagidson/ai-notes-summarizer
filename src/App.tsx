@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import SummaryDisplay from './components/SummaryDisplay';
 import { Button, Textarea } from '@headlessui/react';
+import LoadingSpinner from './components/LoadingSpinner';
+import { mockSummaries } from './mockData'; 
 
-export const mockSummaries = [
-  "Meeting focused on Q2 OKRs and alignment across teams.",
-  "Discussed client feedback, action items, and deadlines.",
-  "Reviewed budget, marketing strategy, and next milestones."
-];
 
 const App: React.FC = () => {
   const [notes, setNotes] = useState('');
@@ -20,6 +17,7 @@ const App: React.FC = () => {
     setSummary('');
     setShowSummary(false);
 
+    // In a real application, you would replace this with an actual API call
     setTimeout(() => {
       const randomSummary = mockSummaries[Math.floor(Math.random() * mockSummaries.length)];
       setSummary(randomSummary);
@@ -39,10 +37,7 @@ const App: React.FC = () => {
       <Navbar />
       <main className="w-screen min-h-screen overflow-auto bg-gray-900 text-white transition-colors">
         <div className="max-w-screen-md mx-auto px-4 py-8 mt-12">
-          <h1 className="text-center text-3xl font-bold mb-6">
-            Welcome
-          </h1>
-
+          <h1 className="text-center text-3xl font-bold mb-6">Welcome</h1>
           <div className="flex flex-col w-full">
             <Textarea
               value={notes}
@@ -62,13 +57,7 @@ const App: React.FC = () => {
                 disabled={loading || !notes.trim()}
               >
                 {loading ? (
-                  <span className="flex items-center">
-                    <svg className="animate-spin h-5 w-5 mr-2 text-white" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
-                    </svg>
-                    Summarizing...
-                  </span>
+                  <LoadingSpinner label="Summarizing..." />
                 ) : (
                   'Summarize'
                 )}
