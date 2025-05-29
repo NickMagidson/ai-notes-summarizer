@@ -37,16 +37,18 @@ const App: React.FC = () => {
   return (
     <>
       <Navbar />
-      <main className='mt-20 w-screen'>
-        <div className="max-w-screen-md mx-auto px-4 py-8">
-          <h1 className="text-center text-3xl font-bold mb-6">Welcome!</h1>
+      <main className="w-screen min-h-screen overflow-auto bg-gray-900 text-white transition-colors">
+        <div className="max-w-screen-md mx-auto px-4 py-8 mt-12">
+          <h1 className="text-center text-3xl font-bold mb-6">
+            Welcome
+          </h1>
 
-          <div className='flex flex-col w-full'>
+          <div className="flex flex-col w-full">
             <Textarea
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder="Paste your meeting notes here..."
-              className="w-full p-4 border border-gray-300 rounded-md mb-4 h-40 resize-none"
+              className="w-full p-4 border border-gray-700 bg-gray-800 text-white rounded-md mb-4 h-40 resize-none"
             />
 
             <div className="flex gap-4 items-center justify-end">
@@ -54,7 +56,8 @@ const App: React.FC = () => {
                 className="inline-flex items-center gap-2
                   rounded-md bg-gray-700 px-3 py-1.5 text-sm/6 font-semibold text-white 
                   shadow-inner shadow-white/10 
-                  focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-gray-600 data-open:bg-gray-700"
+                  focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white 
+                  data-hover:bg-gray-600 data-open:bg-gray-700"
                 onClick={handleSummarize}
                 disabled={loading || !notes.trim()}
               >
@@ -75,9 +78,9 @@ const App: React.FC = () => {
                 <Button
                   onClick={handleClear}
                   className="inline-flex items-center gap-2
-                    rounded-md bg-red-600 px-3 py-1.5 text-sm/6 font-semibold text-white 
+                    rounded-md bg-red-600 hover:bg-red-700 px-3 py-1.5 text-sm/6 font-semibold text-white 
                     shadow-inner shadow-white/10 
-                    focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white hover:bg-red-700"
+                    focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white"
                 >
                   Clear Notes
                 </Button>
