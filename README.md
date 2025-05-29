@@ -1,6 +1,6 @@
 # AI Summarizer Prototype
 
-A lightweight React application to simulate an AI notes summarizer. This project is for the Turnberry Solutions Assessment.
+A lightweight React application to simulate an AI notes summarizer. This project is for the Turnberry Solutions Assessment. Built with TypeScript, Tailwind CSS, and Headless UI 
 
 ---
 
