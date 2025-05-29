@@ -7,7 +7,7 @@ A lightweight React application to simulate an AI notes summarizer. This project
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/ai-summarizer.git
+git clone https://github.com/NickMagidson/ai-notes-summarizer.git
 cd ai-summarizer
 ```
 
@@ -26,6 +26,10 @@ npm run dev
 # or
 yarn dev
 ```
+
+Note: Vite will run this at [text](http://localhost:5173)
+
+---
 
 ## My approach
 
